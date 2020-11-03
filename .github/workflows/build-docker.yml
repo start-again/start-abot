@@ -7,18 +7,30 @@ on:
       - 'v*'
 
 jobs:
-  build-docker:
-    name: Build and push docker images
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Build docker-image
-        env:
-          DOCKER_USER: ${{ secrets.DOCKER_USER }}
-          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+      - name: Login to DockerHub Registry
+        run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+      - name: Get the repository release version
+        id: vars
+        run: echo ::set-output name=tag::$(echo ${GITHUB_REF:10})
+      - name: Build the tagged Docker image
         run: |
-          docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
-          docker build -f ./docker/Dockerfile.prod --build-arg NODE_VERSION=15.0.1 -t startagainco/start-abot:latest -t startagainco/start-abot:${GITHUB_REF:11} .
-          docker push startagainco/start-abot:${GITHUB_REF:11}
-          docker push startagainco/start-abot:latest
-          docker logout
+          docker build . \
+          -f ./docker/Dockerfile.prod \
+          --build-arg NODE_VERSION=15.0.1 \
+          -t startagainco/start-abot:${{steps.vars.outputs.tag}}
+      - name: Push the tagged Docker image
+        run : docker push startagainco/start-abot:${{steps.vars.outputs.tag}}
+      - name: Build the latest Docker image
+        run: |
+          docker build . \
+          -f ./docker/Dockerfile.prod \
+          --build-arg NODE_VERSION=15.0.1 \
+          -t startagainco/start-abot:latest
+      - name: Push the latest Docker image
+        run : docker push startagainco/start-abot:latest
+      - name: Lougout from DockerHub Registry
+        run: docker logout
