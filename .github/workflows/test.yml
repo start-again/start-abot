@@ -1,0 +1,14 @@
+name: Test action
+
+on:
+  push:
+    # Sequence of patterns matched against refs/tags
+    tags:
+      - 'v*'
+
+jobs:
+  say_hello:
+    runs-on: ubuntu-latest
+    steps:
+    - run: |
+        echo "Tag ${{ github.ref }}"
