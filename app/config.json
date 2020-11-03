@@ -1,0 +1,19 @@
+{
+  "prefix": "!",
+  "colors": {
+    "success": "#34A853",
+    "error": "#EA4335",
+    "warning": "#FBBC05",
+    "info": "#4285F4"
+  },
+  "webhook": {
+    "id": "704036893008068681",
+    "token": "du2oGPe7vkmQ5JjOxvTAP6vVN1-dTHDAf7DMFoS-Hc_e3SBvQWb9kOlLZJvb3x9EGRuu"
+  },
+  "channelsID": {
+    "general": "602845866801233950",
+    "logs": "573085815849353216",
+    "rules": "602845866801233950"
+  },
+  "guildID": "310917304563269632"
+}
