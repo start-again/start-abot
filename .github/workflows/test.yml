@@ -11,4 +11,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - run: |
-        echo "Tag ${{ github.tags }}"
+        echo "Tag ${{ github.ref:10 }}"
