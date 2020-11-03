@@ -1,6 +1,5 @@
 {
   "env": {
     "NODE_ENV": "dev"
-  },
-  "ignore": ["db/*"]
+  }
 }
