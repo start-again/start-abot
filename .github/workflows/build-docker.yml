@@ -19,7 +19,7 @@ jobs:
       - name: Build the tagged Docker image
         run: |
           docker build . \
-          -f ./docker/Dockerfile.prod \
+          -f ./Dockerfile \
           --build-arg NODE_VERSION=15.0.1 \
           -t startagainco/start-abot:${{steps.vars.outputs.tag}}
       - name: Push the tagged Docker image
@@ -27,7 +27,7 @@ jobs:
       - name: Build the latest Docker image
         run: |
           docker build . \
-          -f ./docker/Dockerfile.prod \
+          -f ./Dockerfile \
           --build-arg NODE_VERSION=15.0.1 \
           -t startagainco/start-abot:latest
       - name: Push the latest Docker image

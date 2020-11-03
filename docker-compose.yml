@@ -5,7 +5,6 @@ services:
     image: startagainco/start-abot:latest
     build:
       context: .
-      dockerfile: docker/Dockerfile.prod
       args:
         - NODE_VERSION=15.0.1
     environment:
