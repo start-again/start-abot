@@ -1,6 +1,6 @@
 const { MessageEmbed } = require('discord.js')
 
-const { prefix, channelsID, colors, guildID } = require('../config.json')
+const { channelsID, colors, guildID } = require('../config.json')
 const currentDate = require('../utils/currentDate')
 
 module.exports = async (bot, webhook, member) => {

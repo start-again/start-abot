@@ -1,12 +1,9 @@
 const { MessageEmbed } = require('discord.js')
 
-const { prefix, channelsID, colors, guildID } = require('../config.json')
+const { prefix, colors } = require('../config.json')
 const currentDate = require('../utils/currentDate')
 
-module.exports = async (bot) => {
-  const guild = bot.guilds.cache.find((g) => g.id == guildID)
-  const logChannel = guild.channels.cache.find((c) => c.id == channelsID.logs)
-
+module.exports = async (bot, webhook) => {
   // -------------------- Logger --------------------
   console.log(`I'm online sir!`)
   const embed = new MessageEmbed()
@@ -14,7 +11,7 @@ module.exports = async (bot) => {
     .setAuthor('- Back online!', bot.user.avatarURL({ dynamic: true }))
     .setFooter(currentDate())
 
-  logChannel.send(embed)
+  webhook.send(embed)
 
   // -------------------- Bot status --------------------
 

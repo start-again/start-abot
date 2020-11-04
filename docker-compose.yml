@@ -10,3 +10,5 @@ services:
     environment:
       - TOKEN=${TOKEN}
       - NODE_ENV=production
+    volumes:
+      - ./app/config.json:/start-abot/app/config.json:ro

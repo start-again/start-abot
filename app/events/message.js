@@ -1,5 +1,5 @@
 const { MessageEmbed } = require('discord.js')
-const { prefix, colors, channelsID, guildID } = require('../config.json')
+const { prefix, channelsID, guildID } = require('../config.json')
 const currentDate = require('../utils/currentDate')
 
 module.exports = async (bot, webhook, message) => {
@@ -20,8 +20,6 @@ module.exports = async (bot, webhook, message) => {
     if (!cmd) return // If that command doesn't exist, silently exit and do nothing
 
     // -------------------- Logger --------------------
-
-    // Private logs
     const embed = new MessageEmbed()
       .setAuthor('- New command', bot.user.avatarURL({ dynamic: true }))
       .setDescription(
