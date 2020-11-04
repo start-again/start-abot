@@ -5,6 +5,6 @@ module.exports = {
   },
 
   run: async (bot, message, args) => {
-    bot.emit('guildMemberAdd', message.author)
+    bot.emit('guildMemberAdd', message.member)
   },
 }

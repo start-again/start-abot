@@ -8,11 +8,11 @@ module.exports = async (bot, webhook, member) => {
   const logChannel = guild.channels.cache.find((c) => c.id == channelsID.logs)
 
   // -------------------- Logger --------------------
-  console.log(`${member.tag} just leaved the server`)
+  console.log(`${member.user.tag} just leaved the server`)
   const embed = new MessageEmbed()
     .setColor(colors.error)
-    .setAuthor('- User leaved', member.avatarURL({ dynamic: true }))
-    .setDescription(member.tag)
+    .setAuthor('- User leaved', member.user.avatarURL({ dynamic: true }))
+    .setDescription(member.user.tag)
     .setFooter(currentDate())
 
   logChannel.send(embed)
