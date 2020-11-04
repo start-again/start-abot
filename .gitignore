@@ -15,7 +15,6 @@ jspm_packages/
 
 # Optional eslint cache
 .eslintcache
-.eslintrc.js
 
 # Yarn Integrity file
 .yarn-integrity
@@ -27,3 +26,4 @@ jspm_packages/
 # Config file
 app/config.json
 .github-secrets
+.env
