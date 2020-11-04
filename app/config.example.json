@@ -1,0 +1,19 @@
+{
+  "prefix": "!",
+  "colors": {
+    "success": "#34A853",
+    "error": "#EA4335",
+    "warning": "#FBBC05",
+    "info": "#4285F4"
+  },
+  "webhook": {
+    "id": "",
+    "token": ""
+  },
+  "channelsID": {
+    "general": "",
+    "logs": "",
+    "rules": ""
+  },
+  "guildID": ""
+}

@@ -5,9 +5,10 @@ services:
     image: startagainco/start-abot:latest
     build:
       context: .
-      dockerfile: docker/Dockerfile.prod
       args:
         - NODE_VERSION=15.0.1
     environment:
       - TOKEN=${TOKEN}
       - NODE_ENV=production
+    volumes:
+      - ./app/config.json:/start-abot/app/config.json:ro
