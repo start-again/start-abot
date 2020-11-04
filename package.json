@@ -19,7 +19,7 @@
     "prettier": "^2.1.2"
   },
   "scripts": {
-    "dev": "nodemon --inspect ./app/index.js",
-    "start": "node app/index.js"
+    "dev": "nodemon --inspect ./app/core.js",
+    "start": "node app/core.js"
   }
 }

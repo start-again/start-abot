@@ -24,3 +24,6 @@ jspm_packages/
 .idea
 .vscode
 
+# Config file
+app/config.json
+.github-secrets

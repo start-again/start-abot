@@ -1,8 +1,8 @@
 FROM node:15.0.1
 
-COPY . /start-abot
-
 WORKDIR /start-abot
+
+COPY . .
 
 RUN yarn cache clean --force
 RUN rm -rf node_modules
