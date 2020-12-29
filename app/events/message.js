@@ -48,4 +48,23 @@ module.exports = async (bot, webhook, message) => {
     }
     cmd.run(bot, message, args) // Run the command
   }
+
+  // -------------------- MineServ command --------------------
+  if (message.channel.id === channelsID.mineServ.location) {
+    console.log(message.content)
+    const [title, xCoordinate, yCoordinate, zCoordinate] = message.content.split('\n')
+    message.delete()
+    console.log(title, xCoordinate, yCoordinate, zCoordinate)
+
+    let coordinateMessage = [`**__${title}:__**`]
+    coordinateMessage.push(`**X:** ${xCoordinate}`)
+    if (!zCoordinate) {
+      coordinateMessage.push(`**Z:** ${yCoordinate}`)
+    } else {
+      coordinateMessage.push(`**Y:** ${yCoordinate}`)
+      coordinateMessage.push(`**Z:** ${zCoordinate}`)
+    }
+
+    message.channel.send(coordinateMessage.join('\n'))
+  }
 }

@@ -13,7 +13,10 @@
   "channelsID": {
     "general": "",
     "logs": "",
-    "rules": ""
+    "rules": "",
+    "mineServ": {
+      "location": ""
+    }
   },
   "guildID": ""
 }
