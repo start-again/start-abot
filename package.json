@@ -1,0 +1,16 @@
+{
+  "name": "start-abot",
+  "version": "2.0.0",
+  "description": "Start Again Discord server bot's",
+  "main": "core.js",
+  "repository": "git@github.com:Start-Again/start-abot.git",
+  "author": "LucasCtrl <lucasalt@protonmail.com>",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "eslint": "^8.30.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "prettier": "^2.8.1"
+  }
+}
